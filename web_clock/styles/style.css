@@ -1,0 +1,239 @@
+:root{
+    font-size: 16px;
+    font-family: 'Raleway', sans-serif;
+    user-select: none;
+    --text-primary: #b6b6b6;
+    --text-secondary: #ececec;
+    --bg-primary: #23232e;
+    --transition-speed: 600ms;
+    --rotation: 0;
+}
+body{
+    color: black;
+    background-color: white;
+    margin: 0;
+    padding: 0;
+    transition: var(--transition-speed);
+}
+body::-webkit-scrollbar{
+    width: 0.5rem;
+}
+body::-webkit-scrollbar-track{
+    background: #1e1e24;
+}
+body::-webkit-scrollbar-thumb{
+    background: blueviolet;
+}
+main{
+    margin-left: 5rem;
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.clock{
+    font-family: 'Rubik', sans-serif;
+    font-weight: bold;
+    border-radius: 50%;
+    position: fixed;
+    display: flex;
+    box-shadow: 0 -15px 15px rgba(0, 0, 0, 0.05),
+                inset 0 -15px 15px rgba(100, 100, 100, 0.05),
+                0 15px 15px rgba(255, 255, 255, 0.05),
+                inset 0 15px 15px rgba(255, 255, 255, 0.05);
+}
+.clock .number{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+}
+.clock .num1{
+    --rotation: 30deg;
+    transform: rotate(var(--rotation));
+}
+.clock .num2{
+    --rotation: 60deg;
+    transform: rotate(var(--rotation));
+}
+.clock .num3{
+    display: flex;
+    width: 100%;
+    height: 100%;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+.clock .num4{
+    --rotation: 120deg;
+    transform: rotate(var(--rotation));
+}
+.clock .num5{
+    --rotation: 150deg;
+    transform: rotate(var(--rotation));
+}
+.clock .num6{
+    position: absolute;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: flex-end;
+}
+.clock .num7{
+    --rotation: 210deg;
+    transform: rotate(var(--rotation));
+}
+.clock .num8{
+    --rotation: 240deg;
+    transform: rotate(var(--rotation));
+}
+.clock .num9{
+    position: absolute;
+    display: flex;
+    height: 100%;
+    align-items: center;
+}
+.clock .num10{
+    --rotation: 300deg;
+    transform: rotate(var(--rotation));
+}
+.clock .num11{
+    --rotation: 330deg;
+    transform: rotate(var(--rotation));
+}
+.clock .num12{
+    position: absolute;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.clock .hand{
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    background-color: black;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    transform-origin: bottom;
+    transform: translateX(-50%) rotate(calc(var(--rotation) * 1deg));
+}
+.clock .dot{
+    content: "";
+    background-color: black;
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    left: 50%;
+    bottom: 50%;
+    border-radius: 50%;
+    transform: translate(-50%, 50%);
+}
+.clock .hour{
+    width: 10px;
+    height: 30%;
+    background-color: crimson;
+}
+.clock .minute{
+    width: 6px;
+    height: 35%;
+    background-color: black;
+}
+.clock .second{
+    width: 3px;
+    height: 40%;
+    background-color: black;
+}
+footer{
+    position: absolute;
+    right: 0.5rem;
+    bottom: 0.5rem;
+}
+
+/* Very small screen */
+@media only screen and (max-width: 420px){
+    .clock{
+        width: 250px;
+        height: 250px;
+        font-size: 16px;
+    }
+    .clock .hour{
+        width: 6px;
+    }
+    .clock .minute{
+        width: 4px;
+    }
+    .clock .second{
+        width: 2px;
+    }
+    .clock .dot{
+        width: 10px;
+        height: 10px;
+    }
+    main{
+        margin: 0;
+        min-height: 85vh;
+    }
+    footer{
+        font-size: 12px;
+        bottom: 5.5rem;
+    }
+}
+/* Small screen */
+@media only screen and (min-width: 420px){
+    .clock{
+        width: 400px;
+        height: 400px;
+        font-size: 32px;
+    }
+    .clock .hour{
+        width: 9px;
+    }
+    .clock .minute{
+        width: 5px;
+    }
+    .clock .second{
+        width: 3px;
+    }
+    .clock .dot{
+        width: 20px;
+        height: 20px;
+    }
+    main{
+        margin: 0;
+        min-height: 85vh;
+    }
+    footer{
+        font-size: 12px;
+        bottom: 5.5rem;
+    }
+}
+
+/* Large screen */
+@media only screen and (min-width: 850px){
+    .clock{
+        width: 650px;
+        height: 650px;
+        font-size: 48px;
+    }
+    .clock .hour{
+        width: 10px;
+    }
+    .clock .minute{
+        width: 6px;
+    }
+    .clock .second{
+        width: 3px;
+    }
+    .clock .dot{
+        width: 25px;
+        height: 25px;
+    }
+    main{
+        margin: 0;
+        min-height: 95vh;
+    }
+    footer{
+        bottom: 0.5rem;
+    }
+}
